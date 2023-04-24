@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { Button, TextField, Typography } from "@mui/material";
 import { login } from "../../Redux/sessionSlice";
-
+import { useSelector } from "react-redux";
 function Login() {
+  const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
-
+  const loggedIn = useSelector((state) => state.session.isLoggedIn);
   const handleLogin = ({ username, password }) => {
     dispatch(login({ username, password }));
   };
@@ -24,12 +26,14 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     handleLogin({ password: password, username: username });
-    /*  if (username === "admin" && password === "admin") {
-      console.log("estaria bien");
-    } else {
-      console.log("no esta bien");
-    } */
   };
+
+  useEffect(() => {
+    if (loggedIn) {
+      navigate("/dashboard");
+    }
+  }, [loggedIn]);
+
   return (
     <form onSubmit={handleSubmit}>
       <Typography variant="h4" component="h1" align="center" gutterBottom>
