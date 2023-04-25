@@ -1,5 +1,4 @@
 import { Button } from "@mui/material";
-import React from "react";
 import { useDispatch } from "react-redux";
 import { logout } from "../../Redux/sessionSlice";
 import { useNavigate } from "react-router-dom";
@@ -14,9 +13,9 @@ function Logout() {
     navigate("/");
   };
   return (
-    <div>
-      <Button onClick={handleLogout}>Logout</Button>
-    </div>
+    <Button variant="contained" color="warning" onClick={handleLogout}>
+      Logout
+    </Button>
   );
 }
 
