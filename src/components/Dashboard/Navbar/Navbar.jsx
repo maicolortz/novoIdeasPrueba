@@ -4,6 +4,7 @@ import { AppBar, Toolbar, Typography, Button } from "@mui/material";
 import Chat from "../Chat";
 import { useNavigate } from "react-router-dom";
 import Logout from "../Logout";
+import React from "react";
 
 const Appbar = styled(AppBar)({
   backgroundColor: "#212121",

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import React from "react";
 
 function Chat() {
   const [chatData, setChatData] = useState([]);

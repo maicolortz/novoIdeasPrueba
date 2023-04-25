@@ -4,6 +4,7 @@ import Login from "./components/Login/Login";
 import Navbar from "./components/Dashboard/Navbar/Navbar";
 import Inicio from "./components/Dashboard/Inicio";
 import Chat from "./components/Dashboard/Chat";
+import React from "react";
 
 function App() {
   return (
