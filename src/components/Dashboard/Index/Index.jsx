@@ -1,11 +1,12 @@
-import { Typography } from "@mui/material";
 import React from "react";
-import Logout from "./Logout";
+import Navbar from "./Navbar";
+import Chat from "../Chat";
 
 function Index() {
   return (
     <div>
-      <Logout></Logout>
+      <Navbar></Navbar>
+      <Chat></Chat>
     </div>
   );
 }

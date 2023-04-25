@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 function Logout() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
   const handleLogout = (e) => {
     e.preventDefault();
     dispatch(logout());

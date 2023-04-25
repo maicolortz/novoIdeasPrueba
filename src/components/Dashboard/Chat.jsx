@@ -1,7 +1,34 @@
-import React from "react";
+import { useState, useEffect } from "react";
 
 function Chat() {
-  return <div>Chat</div>;
-}
+  const [chatData, setChatData] = useState([]);
 
+  useEffect(() => {
+    const fetchChatData = async () => {
+      try {
+        const response = await fetch(
+          "https://pbakxq15qi.execute-api.us-west-2.amazonaws.com/testing?user=admin&password=admin"
+        );
+        const data = await response.json();
+        setChatData(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchChatData();
+  }, []);
+
+  return (
+    <div>
+      {chatData.map((message) => (
+        <div key={message.id}>
+          <p>
+            {message.sender}: {message.message}
+          </p>
+        </div>
+      ))}
+    </div>
+  );
+}
 export default Chat;
