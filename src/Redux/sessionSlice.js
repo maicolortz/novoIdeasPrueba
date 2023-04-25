@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
 
 const initialState = {
   user: null,
@@ -44,10 +43,17 @@ export const login =
         user: username,
         password: password,
       };
-      const response = await axios.post(
-        " https://pbakxq15qi.execute-api.us-west-2.amazonaws.com/testing",
-        data
+      const response = await fetch(
+        "https://pbakxq15qi.execute-api.us-west-2.amazonaws.com/testing",
+        {
+          method: "POST",
+          body: JSON.stringify(data),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
       );
+
       console.log(response);
       dispatch(loginSuccess(response.data));
     } catch (error) {
