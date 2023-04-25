@@ -35,29 +35,31 @@ function Login() {
   }, [loggedIn]);
 
   return (
-    <form onSubmit={handleSubmit}>
-      <Typography variant="h4" component="h1" align="center" gutterBottom>
-        Administrador
-      </Typography>
-      <TextField
-        required
-        fullWidth
-        label="Usuario"
-        value={username}
-        onChange={handleUsernameChange}
-      />
-      <TextField
-        required
-        fullWidth
-        label="Contraseña"
-        type="password"
-        value={password}
-        onChange={handlePasswordChange}
-      />
-      <Button variant="contained" type="submit" fullWidth>
-        Ingresar
-      </Button>
-    </form>
+    <div className="containerLogin">
+      <form onSubmit={handleSubmit} className="Login">
+        <Typography variant="h4" component="h1" align="center" gutterBottom>
+          Administrador
+        </Typography>
+        <TextField
+          required
+          fullWidth
+          label="Usuario"
+          value={username}
+          onChange={handleUsernameChange}
+        />
+        <TextField
+          required
+          fullWidth
+          label="Contraseña"
+          type="password"
+          value={password}
+          onChange={handlePasswordChange}
+        />
+        <Button variant="contained" type="submit" fullWidth>
+          Ingresar
+        </Button>
+      </form>
+    </div>
   );
 }
 

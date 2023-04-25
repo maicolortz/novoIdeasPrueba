@@ -24,7 +24,7 @@ export default function Navbar() {
     <Appbar position="static">
       <Toolbar>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          NovoIdeas
+          Novo
         </Typography>
         <NavButton onClick={() => navigate("/dashboard")} color="inherit">
           Inicio

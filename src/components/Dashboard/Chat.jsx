@@ -24,7 +24,7 @@ function Chat() {
       {chatData.map((message) => (
         <div key={message.id}>
           <p>
-            {message.sender}: {message.message}
+            <strong> {message.sender}</strong>: {message.message}
           </p>
         </div>
       ))}
