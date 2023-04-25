@@ -5,7 +5,6 @@ import { useDispatch } from "react-redux";
 import { Button, TextField, Typography } from "@mui/material";
 import { login } from "../../Redux/sessionSlice";
 import { useSelector } from "react-redux";
-import React from "react";
 
 function Login() {
   const navigate = useNavigate();

@@ -1,4 +1,3 @@
-import React from "react";
 import { Button, Container, Grid, Typography } from "@mui/material";
 import img1 from "../../assets/Arrows_home.png";
 import { List, ListItem, ListItemText } from "@mui/material";
